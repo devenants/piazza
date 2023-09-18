@@ -12,6 +12,7 @@ kind: Bundle
 metadata:
   name: bundle-test
 spec:
+  identifier: default
   type: test
 status:
   hits: 1000
@@ -29,12 +30,10 @@ func TestBundleList(t *testing.T) {
 apiVersion: v1
 kind: BundleList
 metadata:
-  name: bundlelist-test
+  name: bundle-list-test
 items:
 - spec:
-    route:
-    match: /default/default/default
-    table: default
+    identifier: default
     type: test
   status:
     hits: 1000

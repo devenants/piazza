@@ -30,7 +30,7 @@ func TestBundleBindingList(t *testing.T) {
 apiVersion: v1
 kind: BundleBindingList
 metadata:
-  name: bundlebinding-test
+  name: bundlebinding-list-test
 items:
 - spec:
     type: match

@@ -12,7 +12,7 @@ kind: Endpoint
 metadata:
   name: endpoint-test
 spec:
-  groupe: default
+  slot: default
   segment: default
   capacity: default
   addr: 127.0.0.1:9000
@@ -35,7 +35,7 @@ metadata:
   name: endpoint-test
 items:
 - spec:
-    groupe: default
+    slot: default
     segment: default
     capacity: default
     addr: 127.0.0.1:9000

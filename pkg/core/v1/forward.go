@@ -6,7 +6,7 @@ import (
 
 type TableDescriptor struct {
 	Name    string `yaml:"name,omitempty"`
-	Groupe  string `yaml:"groupe,omitempty"`
+	Slot    string `yaml:"slot,omitempty"`
 	Segment string `yaml:"segment,omitempty"`
 	Weight  string `yaml:"weight,omitempty"`
 }
