@@ -4,26 +4,33 @@ import (
 	metav1 "github.com/devenants/piazza/pkg/meta/v1"
 )
 
-type TableDescriptor struct {
-	Name    string `yaml:"name,omitempty"`
-	Slot    string `yaml:"slot,omitempty"`
-	Segment string `yaml:"segment,omitempty"`
-	Weight  string `yaml:"weight,omitempty"`
+type DescriptorSpec struct {
+	Config metav1.IdentifierListPair `yaml:"config,omitempty"`
+	Weight int32                     `yaml:"weight,omitempty"`
+	Action string                    `yaml:"action,omitempty"`
+	Policy string                    `yaml:"policy,omitempty"`
+}
+
+type DescriptorStatus struct {
+	Hits string `yaml:"hits,omitempty"`
+}
+
+type Descriptor struct {
+	Spec   DescriptorSpec   `yaml:"spec,omitempty"`
+	Status DescriptorStatus `yaml:"status,omitempty"`
 }
 
 type ForwardTemplate struct {
-	Match     string            `yaml:"match,omitempty"`
-	Policy    string            `yaml:"policy,omitempty"`
-	Endpoints []TableDescriptor `yaml:"endpoints,omitempty"`
-}
-
-type ForwardBundle struct {
-	Name string `yaml:"name,omitempty"`
+	Match   string        `yaml:"match,omitempty"`
+	Rewrite string        `yaml:"rewrite,omitempty"`
+	Action  string        `yaml:"action,omitempty"`
+	Next    string        `yaml:"next,omitempty"`
+	Policy  string        `yaml:"policy,omitempty"`
+	Items   []*Descriptor `yaml:"items,omitempty"`
 }
 
 type ForwardSpec struct {
-	Bundles []*ForwardBundle   `yaml:"bundles,omitempty"`
-	Config  []*ForwardTemplate `yaml:"config,omitempty"`
+	ForwardTemplate `json:",inline"`
 }
 
 type ForwardStatus struct {

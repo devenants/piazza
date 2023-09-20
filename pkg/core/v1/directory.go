@@ -5,25 +5,20 @@ import (
 )
 
 type DirectoryDescriptor struct {
-	Name  string   `yaml:"name,omitempty"`
-	Paths []string `yaml:"paths,omitempty"`
+	Name    string   `yaml:"name,omitempty"`
+	Targets []string `yaml:"targets,omitempty"`
 }
 
 type DirectoryTemplate struct {
-	Match       string                `yaml:"match,omitempty"`
-	Policy      string                `yaml:"policy,omitempty"`
-	Descriptors []DirectoryDescriptor `yaml:"descriptors,omitempty"`
-}
-
-type DirectoryBundle struct {
-	Name string `yaml:"name,omitempty"`
+	Mapping     string                 `yaml:"mapping,omitempty"`
+	Policy      string                 `yaml:"policy,omitempty"`
+	Descriptors []*DirectoryDescriptor `yaml:"descriptors,omitempty"`
 }
 
 type DirectorySpec struct {
-	Identifier string `yaml:"identifier,omitempty"`
-
-	Bundles []*DirectoryBundle `yaml:"bundles,omitempty"`
-	Config  DirectoryTemplate  `yaml:"config,omitempty"`
+	Identifier string                 `yaml:"identifier,omitempty"`
+	Bundles    []*metav1.ResourceMeta `yaml:"bundles,omitempty"`
+	Config     DirectoryTemplate      `yaml:"config,omitempty"`
 }
 
 type DirectoryStatus struct {

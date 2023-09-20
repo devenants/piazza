@@ -12,16 +12,24 @@ kind: Forward
 metadata:
   name: forward-test
 spec:
-  bundles:
-  - name: default
-  config:
-  - match: /default/default/default
-    policy: default
-    endpoints: 
-    - name: default
-      slot: default
-      segment: default
-      weight: 10
+  match: /
+  policy: default
+  items:
+  - spec:
+      weight: 100
+      config:
+        head:
+        - metadata:
+            name: default
+            cluster: default
+            namespace: default
+        tail:
+        - metadata:
+            name: default
+            cluster: default
+            namespace: default
+    status:
+      hits: 1000
 status:
   hits: 1000
 `
@@ -45,18 +53,26 @@ items:
   metadata:
     name: forward-test
   spec:
-    bundles:
-    - name: default
-    config:
-    - match: /default/default/default
-      policy: default
-      endpoints: 
-      - name: default
-        slot: default
-        segment: default
-        weight: 10
+    match: /
+    policy: default
+    items:
+    - spec:
+        weight: 100
+        config:
+          head:
+          - metadata:
+              name: default
+              cluster: default
+              namespace: default
+          tail:
+          - metadata:
+              name: default
+              cluster: default
+              namespace: default
+      status:
+        hits: 1000
   status:
-      hits: 1000
+    hits: 1000
 `
 
 	var config ForwardList

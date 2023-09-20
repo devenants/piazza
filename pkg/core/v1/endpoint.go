@@ -9,6 +9,7 @@ type EndpointTemplate struct {
 	Segment  string `yaml:"segment,omitempty"`
 	Capacity string `yaml:"capacity,omitempty"`
 	Addr     string `yaml:"addr,omitempty"`
+	Weight   int32  `yaml:"weight,omitempty"`
 }
 
 type EndpointSpec struct {

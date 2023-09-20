@@ -5,9 +5,10 @@ import (
 )
 
 type BundleBindingSpec struct {
-	Type   string `yaml:"type,omitempty"`
-	Match  string `yaml:"match,omitempty"`
-	Bundle string `yaml:"bundle,omitempty"`
+	Identifier string                 `yaml:"identifier,omitempty"`
+	Mode       string                 `yaml:"mode,omitempty"`
+	Mapping    string                 `yaml:"mapping,omitempty"`
+	Bundles    []*metav1.ResourceMeta `yaml:"bundles,omitempty"`
 }
 
 type BundleBindingStatus struct {
