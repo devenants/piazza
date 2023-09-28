@@ -4,11 +4,15 @@ import (
 	metav1 "github.com/devenants/piazza/pkg/meta/v1"
 )
 
+type BundleBindingSelector struct {
+	Names         []string `json:"names,omitempty"`
+	LabelSelector `json:",inline"`
+	Mask          string `yaml:"mask,omitempty"`
+}
+
 type BundleBindingSpec struct {
-	Identifier string                 `yaml:"identifier,omitempty"`
-	Mode       string                 `yaml:"mode,omitempty"`
-	Mapping    string                 `yaml:"mapping,omitempty"`
-	Bundles    []*metav1.ResourceMeta `yaml:"bundles,omitempty"`
+	Selector *BundleBindingSelector `json:"selector,omitempty"`
+	Bundles  []*metav1.ResourceMeta `yaml:"bundles,omitempty"`
 }
 
 type BundleBindingStatus struct {

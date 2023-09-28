@@ -1,8 +1,9 @@
 package v1
 
 import (
-	"gopkg.in/yaml.v2"
 	"testing"
+
+	"gopkg.in/yaml.v2"
 )
 
 func TestEndpoint(t *testing.T) {
@@ -14,7 +15,6 @@ metadata:
 spec:
   slot: default
   segment: default
-  capacity: default
   addr: 127.0.0.1:9000
 status:
   hits: 1000
@@ -37,7 +37,6 @@ items:
 - spec:
     slot: default
     segment: default
-    capacity: default
     addr: 127.0.0.1:9000
   status:
     hits: 1000

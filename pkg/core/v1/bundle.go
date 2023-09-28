@@ -10,10 +10,8 @@ type BundleSelector struct {
 }
 
 type BundleTemplate struct {
-	Identifier string                 `yaml:"identifier,omitempty"`
-	Mode       string                 `yaml:"mode,omitempty"`
-	Selector   *BundleSelector        `json:"selector,omitempty"`
-	Items      []*metav1.ResourceMeta `yaml:"items,omitempty"`
+	Selector *BundleSelector        `json:"selector,omitempty"`
+	Items    []*metav1.ResourceMeta `yaml:"items,omitempty"`
 }
 
 type BundleSpec struct {

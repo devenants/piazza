@@ -1,8 +1,9 @@
 package v1
 
 import (
-	"gopkg.in/yaml.v2"
 	"testing"
+
+	"gopkg.in/yaml.v2"
 )
 
 func TestBundle(t *testing.T) {
@@ -11,9 +12,6 @@ apiVersion: v1
 kind: Bundle
 metadata:
   name: bundle-test
-spec:
-  identifier: default
-  type: test
 status:
   hits: 1000
 `
@@ -32,10 +30,7 @@ kind: BundleList
 metadata:
   name: bundle-list-test
 items:
-- spec:
-    identifier: default
-    type: test
-  status:
+- status:
     hits: 1000
 `
 

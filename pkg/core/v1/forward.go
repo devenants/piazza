@@ -8,7 +8,6 @@ type DescriptorSpec struct {
 	Config metav1.IdentifierListPair `yaml:"config,omitempty"`
 	Weight int32                     `yaml:"weight,omitempty"`
 	Action string                    `yaml:"action,omitempty"`
-	Policy string                    `yaml:"policy,omitempty"`
 }
 
 type DescriptorStatus struct {
@@ -21,11 +20,10 @@ type Descriptor struct {
 }
 
 type ForwardTemplate struct {
-	Match   string        `yaml:"match,omitempty"`
+	Mask    string        `yaml:"mask,omitempty"`
 	Rewrite string        `yaml:"rewrite,omitempty"`
 	Action  string        `yaml:"action,omitempty"`
 	Next    string        `yaml:"next,omitempty"`
-	Policy  string        `yaml:"policy,omitempty"`
 	Items   []*Descriptor `yaml:"items,omitempty"`
 }
 

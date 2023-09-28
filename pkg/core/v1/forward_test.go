@@ -13,7 +13,6 @@ metadata:
   name: forward-test
 spec:
   match: /
-  policy: default
   items:
   - spec:
       weight: 100
@@ -54,7 +53,6 @@ items:
     name: forward-test
   spec:
     match: /
-    policy: default
     items:
     - spec:
         weight: 100

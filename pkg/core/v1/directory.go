@@ -10,15 +10,12 @@ type DirectoryDescriptor struct {
 }
 
 type DirectoryTemplate struct {
-	Mapping     string                 `yaml:"mapping,omitempty"`
-	Policy      string                 `yaml:"policy,omitempty"`
+	Mask        string                 `yaml:"mask,omitempty"`
 	Descriptors []*DirectoryDescriptor `yaml:"descriptors,omitempty"`
 }
 
 type DirectorySpec struct {
-	Identifier string                 `yaml:"identifier,omitempty"`
-	Bundles    []*metav1.ResourceMeta `yaml:"bundles,omitempty"`
-	Config     DirectoryTemplate      `yaml:"config,omitempty"`
+	Config DirectoryTemplate `yaml:"config,omitempty"`
 }
 
 type DirectoryStatus struct {

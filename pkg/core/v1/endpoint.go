@@ -4,12 +4,18 @@ import (
 	metav1 "github.com/devenants/piazza/pkg/meta/v1"
 )
 
+type EndpointCapacity struct {
+	Memory  int64 `yaml:"memory,omitempty"`
+	Volume  int64 `yaml:"volume,omitempty"`
+	Traffic int64 `yaml:"traffic,omitempty"`
+}
+
 type EndpointTemplate struct {
-	Slot     string `yaml:"slot,omitempty"`
-	Segment  string `yaml:"segment,omitempty"`
-	Capacity string `yaml:"capacity,omitempty"`
-	Addr     string `yaml:"addr,omitempty"`
-	Weight   int32  `yaml:"weight,omitempty"`
+	Slot     string           `yaml:"slot,omitempty"`
+	Segment  string           `yaml:"segment,omitempty"`
+	Capacity EndpointCapacity `yaml:"capacity,omitempty"`
+	Addr     string           `yaml:"addr,omitempty"`
+	Weight   int32            `yaml:"weight,omitempty"`
 }
 
 type EndpointSpec struct {
