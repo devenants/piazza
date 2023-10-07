@@ -33,3 +33,9 @@ const (
 	LabelSelectorOpExists       LabelSelectorOperator = "Exists"
 	LabelSelectorOpDoesNotExist LabelSelectorOperator = "DoesNotExist"
 )
+
+type HostAddr struct {
+	Addr    string `yaml:"addr,omitempty"`
+	Port    string `yaml:"port,omitempty"`
+	Nexthop string `yaml:"nexthop,omitempty"`
+}
