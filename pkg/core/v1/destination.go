@@ -29,8 +29,8 @@ type Destination struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `yaml:"metadata,omitempty"`
 
-	Spec   ForwardSpec   `yaml:"spec,omitempty"`
-	Status ForwardStatus `yaml:"status,omitempty"`
+	Spec   DestinationSpec   `yaml:"spec,omitempty"`
+	Status DestinationStatus `yaml:"status,omitempty"`
 }
 
 type DestinationList struct {
