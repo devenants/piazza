@@ -18,7 +18,7 @@ type DestinationTemplate struct {
 }
 
 type DestinationSpec struct {
-	ForwardTemplate `json:",inline"`
+	DestinationTemplate `json:",inline"`
 }
 
 type DestinationStatus struct {
