@@ -7,8 +7,8 @@ import (
 type ClusterTemplate struct {
 	Slot              string     `yaml:"slot,omitempty"`
 	Segment           string     `yaml:"segment,omitempty"`
-	ConenctTimeout    int32      `yaml:"connecttimeout,omitempty"`
-	LoadBalancePolicy int32      `yaml:"loadbalancepolicy,omitempty"`
+	ConenctTimeout    int32      `yaml:"connectTimeout,omitempty"`
+	LoadBalancePolicy string     `yaml:"loadBalancePolicy,omitempty"`
 	Hosts             []HostAddr `yaml:"hosts,omitempty"`
 }
 
